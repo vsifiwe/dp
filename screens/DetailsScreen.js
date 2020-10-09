@@ -35,7 +35,7 @@ const DetailsScreen = ({ navigation }) => {
                     alignItems: 'center',
                 }}
             >
-                <Text category='h1'>DETAILS</Text>
+                <Text category='s1'>The state is loading</Text>
             </Layout>
         </SafeAreaView>
     );
