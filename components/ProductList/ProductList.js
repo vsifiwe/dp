@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-    Dimensions,
-    ImageBackground,
-    ListRenderItemInfo,
-    View,
-} from 'react-native';
+import { Dimensions, ImageBackground, View } from 'react-native';
 import {
     Button,
     Card,
@@ -12,15 +7,27 @@ import {
     StyleService,
     Text,
     useStyleSheet,
+    Icon,
 } from '@ui-kitten/components';
-import { CartIcon } from './extra/icons';
+import { Product } from './Extra/data';
+
+const products = [
+    Product.pinkChair(),
+    Product.blackLamp(),
+    Product.whiteChair(),
+    Product.woodChair(),
+    Product.pinkChair(),
+    Product.blackLamp(),
+    Product.whiteChair(),
+    Product.woodChair(),
+];
 
 export const ProductListScreen = ({ navigation, route }) => {
     const styles = useStyleSheet(themedStyles);
 
-    const displayProducts = products.filter(
-        (product) => product.category === route.name
-    );
+    const CartIcon = (props) => <Icon name='shopping-cart' {...props} />;
+
+    const displayProducts = products.filter((product) => {});
 
     const onItemPress = (index) => {
         navigation && navigation.navigate('ProductDetails3');
@@ -36,7 +43,7 @@ export const ProductListScreen = ({ navigation, route }) => {
             <Button
                 style={styles.iconButton}
                 size='small'
-                icon={CartIcon}
+                accessoryLeft={CartIcon}
                 onPress={() => onItemCartPress(info.index)}
             />
         </View>
