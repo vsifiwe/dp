@@ -10,6 +10,7 @@ import {
     Icon,
 } from '@ui-kitten/components';
 import { Product } from './Extra/data';
+import {addToCart} from '../../server/cart'
 
 const products = [
     Product.pinkChair(),
@@ -33,7 +34,8 @@ export const ProductListScreen = ({ navigation, route }) => {
         navigation && navigation.navigate('ProductDetails3');
     };
 
-    const onItemCartPress = (index) => {
+    const onItemCartPress = (index, info) => {
+        addToCart(info);
         navigation && navigation.navigate('ShoppingCart');
     };
 
@@ -44,7 +46,7 @@ export const ProductListScreen = ({ navigation, route }) => {
                 style={styles.iconButton}
                 size='small'
                 accessoryLeft={CartIcon}
-                onPress={() => onItemCartPress(info.index)}
+                onPress={() => onItemCartPress(info.index, info)}
             />
         </View>
     );
