@@ -23,8 +23,10 @@ const products = [
     Product.woodChair(),
 ];
 
-export const ProductListScreen = ({ navigation, route }) => {
+export const ProductListScreen = ( props, { navigation, route }) => {
     const styles = useStyleSheet(themedStyles);
+    const product = props.Products;
+    console.log(product)
 
     const CartIcon = (props) => <Icon name='shopping-cart' {...props} />;
 
@@ -32,6 +34,7 @@ export const ProductListScreen = ({ navigation, route }) => {
 
     const onItemPress = (index) => {
         navigation && navigation.navigate('ProductDetails3');
+        console.log('Item ' + index + ' pressed')
     };
 
     const onItemCartPress = (index, info) => {

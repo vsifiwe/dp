@@ -6,10 +6,9 @@ import {
 } from '@ui-kitten/components';
 
 const PersonIcon = (props) => <Icon {...props} name='person-outline' />;
-
-const BellIcon = (props) => <Icon {...props} name='bell-outline' />;
-
-const EmailIcon = (props) => <Icon {...props} name='email-outline' />;
+const SearchIcon = (props) => <Icon {...props} name='search-outline' />;
+const WheelIcon = (props) => <Icon {...props} name='pricetags-outline' />;
+const DollarIcon = (props) => <Icon {...props} name='settings-outline' />;
 
 export const BottomTabBar = ({ navigation, state }) => (
     <BottomNavigation
@@ -17,6 +16,8 @@ export const BottomTabBar = ({ navigation, state }) => (
         onSelect={(index) => navigation.navigate(state.routeNames[index])}
     >
         <BottomNavigationTab title='Home' icon={PersonIcon} />
-        <BottomNavigationTab title='Details' icon={BellIcon} />
+        <BottomNavigationTab title='Search' icon={SearchIcon} />
+        <BottomNavigationTab title='Local Prices' icon={WheelIcon} />
+        <BottomNavigationTab title='Settings' icon={DollarIcon} />
     </BottomNavigation>
 );

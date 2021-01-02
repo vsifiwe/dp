@@ -25,3 +25,25 @@ export function SettingsStackScreen() {
         </SettingsStack.Navigator>
     );
 }
+
+const PriceStack = createStackNavigator();
+
+export function PriceStackScreen() {
+    return (
+        <PriceStack.Navigator headerMode='none'>
+            <PriceStack.Screen name='Settings' component={SettingsScreen} />
+            <PriceStack.Screen name='Details' component={DetailsScreen} />
+        </PriceStack.Navigator>
+    );
+}
+
+const SearchStack = createStackNavigator();
+
+export function SearchStackScreen() {
+    return (
+        <SearchStack.Navigator headerMode='none'>
+            <SearchStack.Screen name='Settings' component={SettingsScreen} />
+            <SearchStack.Screen name='Details' component={DetailsScreen} />
+        </SearchStack.Navigator>
+    );
+}

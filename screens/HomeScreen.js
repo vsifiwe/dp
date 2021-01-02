@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView } from 'react-native';
-import { TopNavigation } from '@ui-kitten/components';
+import { TopNavigation, Spinner } from '@ui-kitten/components';
 import { ProductListScreen } from '../components/ProductList/ProductList';
 
 const HomeScreen = ({ navigation }) => {
@@ -26,7 +26,9 @@ const HomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <TopNavigation title='MyApp' alignment='center' />
-            <ProductListScreen />
+            <Spinner status='success'/>
+            <ProductListScreen Products='yes'/> 
+            {/* // TODO: pass products instead of yes and remove spinner instead to implement good loading */}
         </SafeAreaView>
     );
 };
